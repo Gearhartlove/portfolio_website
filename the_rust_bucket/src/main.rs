@@ -3,15 +3,15 @@ use yew_router::prelude::*;
 
 mod pages;
 use pages::{
-    page_not_found::PageNotFound
+    page_not_found::PageNotFound, home::Home, posts::Posts,
 };
 use yew::html::Scope;
 
 // testing routes
 #[derive(Routable, PartialEq, Clone, Debug)]
 pub enum Route {
-    // #[at("/")]
-    // Home,
+    #[at("/posts")]
+    Posts,
     #[at("/")]
     Home,
     #[not_found]
@@ -48,7 +48,7 @@ impl Component for App {
 
     fn view(&self, ctx:&Context<Self>) -> Html {
         // todo()! start by running the application and debugging . . .
-        html! ({
+        return html! {
             <BrowserRouter>
                 { self.view_button(ctx.link()) }
 
@@ -61,7 +61,7 @@ impl Component for App {
                     </div>
                 </footer>
             </BrowserRouter>
-        })
+        }
     }
 }
 
@@ -74,7 +74,17 @@ impl App {
 
 fn switch(routes: &Route) -> Html {
     // hard code for now . . .
-    html! ({ <PageNotFound />})
+    match routes.clone() {
+        Route::Home => {
+            return html! { <Home /> }
+        }
+        Route::NotFound => {
+            return html! { <PageNotFound /> }
+        }
+        Route::Posts => {
+            return html! { <Posts /> }
+        }
+    }
 }
 
 fn main() {

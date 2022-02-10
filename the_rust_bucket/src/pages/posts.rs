@@ -1,8 +1,8 @@
 use yew::prelude::*;
 
-pub struct Home;
+pub struct Posts;
 
-impl Component for Home {
+impl Component for Posts {
     type Message = ();
     type Properties = ();
 
@@ -11,7 +11,7 @@ impl Component for Home {
     fn view(&self, _ctx: &Context<Self>) -> Html {
         return html! {
             <div>
-                <p> { "welcome to the homepage!" } </p>
+                <p> { "these are my posts " } </p>
             </div>
         }
     }
