@@ -47,7 +47,6 @@ impl Component for App {
     }
 
     fn view(&self, ctx:&Context<Self>) -> Html {
-        // todo()! start by running the application and debugging . . .
         return html! {
             <BrowserRouter>
                 { self.view_button(ctx.link()) }
