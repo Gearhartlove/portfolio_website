@@ -56,7 +56,7 @@ impl Component for App {
                 </main>
                 <footer class="footer">
                     <div class="content has-text-centered">
-                        { "Powered by hard working robits" }
+                        { "" }
                     </div>
                 </footer>
             </BrowserRouter>
@@ -66,7 +66,7 @@ impl Component for App {
 
 impl App {
     fn view_button(&self, link: &Scope<Self>) -> Html {
-        html!({ "temporary html "})
+        html!({""})
     }
 }
 

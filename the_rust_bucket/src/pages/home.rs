@@ -10,9 +10,46 @@ impl Component for Home {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         return html! {
-            <div>
-                <p> { "welcome to the homepage!" } </p>
+            <div class="row">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <p class="centered"> { "Hi! My name's Kristoff and welcome to my website!" } </p>
+                <p class="centered"> { "Below you can find my projects, posts, and podcasts" } </p>
+                <p class="centered" style="font-size:12px;"> { "<made with rust and love>" } </p>
+                <br/>
+                <br/>
+                <br/>
+                <div class="column"
+                style="background-color:#aaa;">
+                    <div class="center">
+                        <h3> { "Posts" } </h3>
+                        <a href="https://github.com/Gearhartlove/the-rust-bucket/discussions/1"
+                        target="_blank"> { "[3/11/21]What is the rust bucket"} </a>
+                        <br/>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="center">
+                        <h3> { "Projects" } </h3>
+                        <a href="https://github.com/Gearhartlove/the-rust-bucket"
+                        target="_blank"> { "the rust bucket 🌐" } </a>
+                        <br/>
+                        <a href="https://github.com/Gearhartlove/tenebrae_cl"
+                        target="_blank"> { "tenebrae_cl 🎮" } </a>
+                        <br/>
+                        <a href="https://github.com/Gearhartlove/firefly"
+                        target="_blank"> { "firefly 🪰✍️" } </a>
+                        <br/>
+                        <a href="https://github.com/Gearhartlove/ezla"
+                        target="_blank"> { "ezla 🧮" } </a>
+                        <br/>
+                    </div>
+                </div>
+
             </div>
-        }
+        };
     }
 }
