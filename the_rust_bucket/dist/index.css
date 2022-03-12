@@ -1,3 +1,11 @@
+/*
+color palet:
+yellow: (232, 169, 65)
+sand: (191,  183,  147)
+darker_sand: (166, 166, 148)
+blue: (38, 93, 113)
+dark_blue: (8,29,37)
+ */
 .hero.has-background {
   position: relative;
   overflow: hidden;
@@ -24,6 +32,10 @@
   width: 50%;
 }
 
+.navbar-brand {
+  align-items: center;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -43,4 +55,35 @@
 
 html * {
   font-family: "JetBrains Mono" !important;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #265d71;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidebar */
+  padding: 0 10px;
 }

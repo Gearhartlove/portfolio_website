@@ -2,29 +2,33 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 
 mod pages;
+
 use pages::{
-    page_not_found::PageNotFound, home::Home, posts::Posts,
+    page_not_found::PageNotFound, home::Home, posts::Posts, accumulator::Accumulator,
+    textbox::Textbox,
 };
 use yew::html::Scope;
 
 // testing routes
 #[derive(Routable, PartialEq, Clone, Debug)]
 pub enum Route {
-    #[at("/posts")]
-    Posts,
     #[at("/")]
     Home,
+    #[at("/acc")]
+    Accumulator,
+    #[at("/textbox")]
+    TextBox,
     #[not_found]
     #[at("/404")]
     NotFound,
 }
 
 pub enum Msg {
-    ToggleButton,
+    ToggleNavbar
 }
 
 struct App {
-    button_active: bool,
+    navbar_active: bool,
 }
 
 impl Component for App {
@@ -33,23 +37,23 @@ impl Component for App {
 
     fn create(_ctx: &Context<Self>) -> Self {
         Self {
-            button_active: false,
+            navbar_active: false,
         }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
-            Msg::ToggleButton => {
-                self.button_active = !self.button_active;
+            Msg::ToggleNavbar => {
+                self.navbar_active = !self.navbar_active;
                 true
             }
         }
     }
 
-    fn view(&self, ctx:&Context<Self>) -> Html {
+    fn view(&self, ctx: &Context<Self>) -> Html {
         return html! {
             <BrowserRouter>
-                { self.view_button(ctx.link()) }
+                { self.view_nav(ctx.link()) }
 
                 <main>
                     <Switch<Route> render={Switch::render(switch)} />
@@ -60,28 +64,32 @@ impl Component for App {
                     </div>
                 </footer>
             </BrowserRouter>
-        }
+        };
     }
 }
 
 impl App {
-    fn view_button(&self, link: &Scope<Self>) -> Html {
-        html!({""})
+    fn view_nav(&self, link: &Scope<Self>) -> Html {
+        return html!{}
     }
 }
 
 
+//noinspection ALL
 fn switch(routes: &Route) -> Html {
     // hard code for now . . .
-    match routes.clone() {
+    return match routes.clone() {
         Route::Home => {
-            return html! { <Home /> }
+            html! { <Home /> }
         }
         Route::NotFound => {
-            return html! { <PageNotFound /> }
+            html! { <PageNotFound /> }
         }
-        Route::Posts => {
-            return html! { <Posts /> }
+        Route::Accumulator => {
+            html! { <Accumulator />}
+        }
+        Route::TextBox => {
+            html! { <Textbox /> }
         }
     }
 }
