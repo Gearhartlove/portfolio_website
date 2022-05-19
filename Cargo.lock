@@ -235,6 +235,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d4fd5641d01c8f18a23da7b6fe29298ff4b55afcccdf78973b24cf3175fee32e"
 
 [[package]]
+name = "portfolio_website"
+version = "0.1.0"
+dependencies = [
+ "log",
+ "wasm-logger",
+ "yew",
+ "yew-router",
+]
+
+[[package]]
 name = "proc-macro-error"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -364,16 +374,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "unicode-xid",
-]
-
-[[package]]
-name = "the_rust_bucket"
-version = "0.1.0"
-dependencies = [
- "log",
- "wasm-logger",
- "yew",
- "yew-router",
 ]
 
 [[package]]
