@@ -84,7 +84,7 @@ html * {
 }
 
 .sidenav a:hover {
-  color: rgb(38, 93, 113);
+  color: rgb(255, 184, 10);
 }
 
 /* Style page content */
@@ -92,6 +92,12 @@ html * {
   margin-left: 40%;
   margin-right:20%;
   max-width: 52ch;
-  //max-width: 27ch;
   padding: 0 10px;
+}
+
+.portrait {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
